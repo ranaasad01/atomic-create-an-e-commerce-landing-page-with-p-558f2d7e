@@ -162,6 +162,7 @@ export default function Navbar() {
                 href={getLinkHref(APP_CTA_HREF)}
                 onClick={(e) => handleAnchorClick(e, APP_CTA_HREF)}
                 className="mt-2 px-4 py-3 text-sm font-semibold text-white bg-gradient-to-r from-violet-600 to-indigo-600 rounded-xl text-center"
+                style={{ fontFamily: "DM Sans", fontSize: "24px" }}
               >
                 {APP_CTA_LABEL}
               </Link>

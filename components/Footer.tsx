@@ -151,18 +151,21 @@ export default function Footer() {
           </motion.div>
 
           {/* Link Sections */}
-          {footerSections.map((section) => (
+          {footerSections.map((section, sectionIndex) => (
             <motion.div key={section.title} variants={fadeInUp}>
               <h4 className="text-sm font-semibold text-white uppercase tracking-wider mb-4">
                 {section.title}
               </h4>
               <ul className="space-y-3">
-                {section.links.map((link) => (
+                {section.links.map((link, linkIndex) => (
                   <li key={link.label}>
                     <Link
                       href={getLinkHref(link.href)}
                       onClick={(e) => handleAnchorClick(e, link.href)}
                       className="text-sm text-neutral-400 hover:text-white transition-colors duration-200"
+                      {...(sectionIndex === 0 && linkIndex === 3
+                        ? { style: { fontFamily: "DM Sans", fontSize: "24px" } }
+                        : {})}
                     >
                       {link.label}
                     </Link>

@@ -106,7 +106,7 @@ const collections = [
     title: "The Sanctuary Edit",
     subtitle: "Home & Scent",
     count: 24,
-    image: "https://thesanctuaryedit.com/wp-content/uploads/2025/07/cropped-sanctuaryeditlogo-2.png",
+    image: "https://titoaistorageaccount.blob.core.windows.net/titoai-storage/assets/558f2d7e-b2af-4c36-a35f-8329165b1921/f38a45853f0d4d50b5b5b489b8700f28.png",
     accent: "from-amber-900/60 to-amber-950/80",
   },
   {
@@ -114,7 +114,7 @@ const collections = [
     title: "Luminous Skin",
     subtitle: "Beauty & Wellness",
     count: 18,
-    image: "https://thesanctuaryedit.com/wp-content/uploads/2025/07/cropped-sanctuaryeditlogo-2.png",
+    image: "https://titoaistorageaccount.blob.core.windows.net/titoai-storage/assets/558f2d7e-b2af-4c36-a35f-8329165b1921/f38a45853f0d4d50b5b5b489b8700f28.png",
     accent: "from-rose-900/60 to-rose-950/80",
   },
   {
@@ -695,7 +695,7 @@ export default function HomePage() {
               </ul>
             </motion.div>
 
-            {/* Image mosaic */}
+            {/* Image grid */}
             <motion.div
               initial="hidden"
               whileInView="visible"
@@ -706,15 +706,15 @@ export default function HomePage() {
               <div className="space-y-4">
                 <div className="rounded-2xl overflow-hidden aspect-[3/4] bg-neutral-800">
                   <img
-                    src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=400&q=80"
-                    alt="Atelier craftsmanship"
+                    src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=400&q=80"
+                    alt="Atelier craft"
                     className="w-full h-full object-cover"
                   />
                 </div>
                 <div className="rounded-2xl overflow-hidden aspect-square bg-neutral-800">
                   <img
-                    src="https://images.unsplash.com/photo-1519710164239-da123dc03ef4?w=400&q=80"
-                    alt="Luxury detail"
+                    src="https://images.unsplash.com/photo-1616627547584-bf28cee262db?w=400&q=80"
+                    alt="Product detail"
                     className="w-full h-full object-cover"
                   />
                 </div>
@@ -722,15 +722,15 @@ export default function HomePage() {
               <div className="space-y-4 pt-8">
                 <div className="rounded-2xl overflow-hidden aspect-square bg-neutral-800">
                   <img
-                    src="https://images.unsplash.com/photo-1555529669-e69e7aa0ba9a?w=400&q=80"
-                    alt="Curated objects"
+                    src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=400&q=80"
+                    alt="Luxury interior"
                     className="w-full h-full object-cover"
                   />
                 </div>
                 <div className="rounded-2xl overflow-hidden aspect-[3/4] bg-neutral-800">
                   <img
-                    src="https://images.unsplash.com/photo-1615529182904-14819c35db37?w=400&q=80"
-                    alt="Elegant living"
+                    src="https://images.unsplash.com/photo-1493106641515-6b5631de4bb9?w=400&q=80"
+                    alt="Craftsmanship"
                     className="w-full h-full object-cover"
                   />
                 </div>
@@ -741,7 +741,7 @@ export default function HomePage() {
       </section>
 
       {/* ── TESTIMONIALS ─────────────────────────────────────────────────── */}
-      <section className="bg-white py-24">
+      <section className="bg-neutral-50 py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial="hidden"
@@ -754,13 +754,13 @@ export default function HomePage() {
               variants={fadeInUp}
               className="text-xs font-semibold text-violet-600 uppercase tracking-widest mb-3"
             >
-              Voices of Lumière
+              Client Stories
             </motion.p>
             <motion.h2
               variants={fadeInUp}
               className="text-3xl sm:text-4xl font-bold text-neutral-900 font-playfair"
             >
-              What Our Clients Say
+              Loved by Connoisseurs
             </motion.h2>
           </motion.div>
 
@@ -775,27 +775,27 @@ export default function HomePage() {
               <motion.div
                 key={t.id}
                 variants={fadeInUp}
-                className="bg-neutral-50 rounded-2xl p-8 flex flex-col gap-5 border border-neutral-100"
+                className="bg-white rounded-2xl p-8 shadow-sm border border-neutral-100 flex flex-col gap-6"
               >
-                <Quote className="w-8 h-8 text-violet-300" />
-                <p className="text-neutral-700 leading-relaxed text-sm flex-1">
+                <Quote className="w-8 h-8 text-violet-200" />
+                <p className="text-neutral-600 leading-relaxed text-sm flex-1">
                   {t.text}
                 </p>
-                <div className="flex items-center gap-0.5 mb-1">
-                  {Array.from({ length: t.rating }).map((_, i) => (
-                    <Star key={i} className="w-4 h-4 fill-amber-400 text-amber-400" />
-                  ))}
-                </div>
-                <div className="flex items-center gap-3">
+                <div className="flex items-center gap-4">
                   <img
                     src={t.avatar}
                     alt={t.name}
-                    className="w-11 h-11 rounded-full object-cover"
+                    className="w-12 h-12 rounded-full object-cover"
                   />
                   <div>
                     <p className="text-sm font-semibold text-neutral-900">{t.name}</p>
                     <p className="text-xs text-neutral-500">{t.role}</p>
                   </div>
+                </div>
+                <div className="flex items-center gap-0.5">
+                  {Array.from({ length: t.rating }).map((_, i) => (
+                    <Star key={i} className="w-4 h-4 fill-amber-400 text-amber-400" />
+                  ))}
                 </div>
               </motion.div>
             ))}
@@ -804,7 +804,7 @@ export default function HomePage() {
       </section>
 
       {/* ── NEWSLETTER ───────────────────────────────────────────────────── */}
-      <section className="bg-gradient-to-br from-violet-950 via-indigo-950 to-neutral-950 py-24">
+      <section className="bg-gradient-to-br from-violet-600 to-indigo-700 py-24">
         <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
             initial="hidden"
@@ -812,40 +812,40 @@ export default function HomePage() {
             viewport={{ once: true, margin: "-80px" }}
             variants={staggerContainer}
           >
-            <motion.div variants={fadeInUp} className="mb-4">
-              <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 border border-white/20 text-white/70 text-sm">
-                <Sparkles className="w-4 h-4 text-violet-400" />
-                Members get early access
-              </span>
-            </motion.div>
+            <motion.p
+              variants={fadeInUp}
+              className="text-xs font-semibold text-violet-200 uppercase tracking-widest mb-3"
+            >
+              Stay in the Loop
+            </motion.p>
             <motion.h2
               variants={fadeInUp}
               className="text-3xl sm:text-4xl font-bold text-white font-playfair mb-4"
             >
-              Join the Inner Circle
+              The Lumière Edit
             </motion.h2>
             <motion.p
               variants={fadeInUp}
-              className="text-white/60 mb-8 leading-relaxed"
+              className="text-violet-100 mb-8 leading-relaxed"
             >
-              Be the first to discover new arrivals, exclusive offers, and
-              stories from our ateliers around the world.
+              New arrivals, behind-the-scenes stories, and exclusive offers —
+              delivered to your inbox every fortnight.
             </motion.p>
 
             {subscribed ? (
               <motion.div
-                initial={{ opacity: 0, scale: 0.95 }}
+                initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
-                className="flex items-center justify-center gap-3 text-emerald-400 font-semibold"
+                className="inline-flex items-center gap-2 px-6 py-3 bg-white/20 rounded-2xl text-white font-semibold"
               >
                 <Check className="w-5 h-5" />
-                You&apos;re on the list. Welcome to Lumière.
+                You&apos;re on the list!
               </motion.div>
             ) : (
               <motion.form
                 variants={fadeInUp}
                 onSubmit={handleSubscribe}
-                className="flex flex-col sm:flex-row gap-3"
+                className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto"
               >
                 <input
                   type="email"
@@ -853,11 +853,11 @@ export default function HomePage() {
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="your@email.com"
                   required
-                  className="flex-1 px-5 py-3.5 rounded-xl bg-white/10 border border-white/20 text-white placeholder-white/40 focus:outline-none focus:border-violet-400 transition-colors duration-200"
+                  className="flex-1 px-5 py-3 rounded-xl bg-white/20 backdrop-blur-sm border border-white/30 text-white placeholder-violet-200 focus:outline-none focus:ring-2 focus:ring-white/50 text-sm"
                 />
                 <button
                   type="submit"
-                  className="px-7 py-3.5 bg-gradient-to-r from-violet-600 to-indigo-600 text-white font-semibold rounded-xl hover:opacity-90 transition-opacity duration-200 whitespace-nowrap"
+                  className="px-6 py-3 bg-white text-violet-700 font-semibold rounded-xl hover:bg-violet-50 transition-colors duration-200 text-sm whitespace-nowrap"
                 >
                   Subscribe
                 </button>
@@ -868,26 +868,26 @@ export default function HomePage() {
       </section>
 
       {/* ── FOOTER ───────────────────────────────────────────────────────── */}
-      <footer className="bg-neutral-950 border-t border-neutral-800 py-16">
+      <footer className="bg-neutral-950 py-16 border-t border-neutral-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
             <div className="md:col-span-2">
               <h3 className="text-2xl font-bold text-white font-playfair mb-3">
                 {APP_NAME}
               </h3>
-              <p className="text-neutral-500 text-sm leading-relaxed max-w-sm">
-                Rare objects, considered beauty, and enduring craft — curated
-                for those who believe the everyday deserves to be extraordinary.
+              <p className="text-neutral-400 text-sm leading-relaxed max-w-xs">
+                Rare objects and considered beauty, sourced from the world&apos;s
+                finest ateliers.
               </p>
             </div>
             <div>
               <h4 className="text-sm font-semibold text-white uppercase tracking-wider mb-4">
                 Shop
               </h4>
-              <ul className="space-y-2.5">
-                {["New Arrivals", "Collections", "Featured", "Sale"].map((item) => (
+              <ul className="space-y-2">
+                {["New Arrivals", "Collections", "Best Sellers", "Sale"].map((item) => (
                   <li key={item}>
-                    <a href="#" className="text-sm text-neutral-500 hover:text-white transition-colors duration-200">
+                    <a href="#" className="text-sm text-neutral-400 hover:text-white transition-colors duration-200">
                       {item}
                     </a>
                   </li>
@@ -898,10 +898,10 @@ export default function HomePage() {
               <h4 className="text-sm font-semibold text-white uppercase tracking-wider mb-4">
                 Company
               </h4>
-              <ul className="space-y-2.5">
+              <ul className="space-y-2">
                 {["About", "Journal", "Careers", "Contact"].map((item) => (
                   <li key={item}>
-                    <a href="#" className="text-sm text-neutral-500 hover:text-white transition-colors duration-200">
+                    <a href="#" className="text-sm text-neutral-400 hover:text-white transition-colors duration-200">
                       {item}
                     </a>
                   </li>
@@ -909,16 +909,16 @@ export default function HomePage() {
               </ul>
             </div>
           </div>
-          <div className="border-t border-neutral-800 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
-            <p className="text-neutral-600 text-xs">
+          <div className="pt-8 border-t border-neutral-800 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <p className="text-xs text-neutral-500">
               &copy; {new Date().getFullYear()} {APP_NAME}. All rights reserved.
             </p>
             <div className="flex items-center gap-6">
-              {["Privacy", "Terms", "Cookies"].map((item) => (
+              {["Privacy Policy", "Terms of Service", "Cookie Policy"].map((item) => (
                 <a
                   key={item}
                   href="#"
-                  className="text-xs text-neutral-600 hover:text-neutral-400 transition-colors duration-200"
+                  className="text-xs text-neutral-500 hover:text-neutral-300 transition-colors duration-200"
                 >
                   {item}
                 </a>
