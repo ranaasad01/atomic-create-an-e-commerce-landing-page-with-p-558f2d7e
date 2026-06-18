@@ -391,7 +391,7 @@ export default function HomePage() {
             <motion.div variants={fadeInUp} className="mb-6">
               <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-white/80 text-sm font-medium">
                 <Sparkles className="w-4 h-4 text-violet-400" />
-                New Collection — Spring 2025
+                New Collection
               </span>
             </motion.div>
 
