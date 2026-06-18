@@ -414,7 +414,7 @@ export default function HomePage() {
               className="max-w-xl mx-auto text-base text-white/50 leading-relaxed mb-10"
             >
               Rare objects, considered beauty, and enduring craft — sourced from
-              the world's finest ateliers and delivered to your door.
+              the world&apos;s finest ateliers and delivered to your door.
             </motion.p>
 
             <motion.div
@@ -677,7 +677,7 @@ export default function HomePage() {
               <p className="text-neutral-400 leading-relaxed mb-8">
                 Every product in our catalogue is tested, touched, and approved
                 by our team before it reaches you. We stock fewer things, but
-                better things. That's the Lumière promise.
+                better things. That&apos;s the Lumière promise.
               </p>
               <ul className="space-y-3">
                 {[
@@ -701,63 +701,47 @@ export default function HomePage() {
               whileInView="visible"
               viewport={{ once: true, margin: "-80px" }}
               variants={slideInRight}
-              className="relative grid grid-cols-2 gap-4"
+              className="grid grid-cols-2 gap-4"
             >
               <div className="space-y-4">
-                <div className="rounded-2xl overflow-hidden aspect-[3/4]">
+                <div className="rounded-2xl overflow-hidden aspect-[3/4] bg-neutral-800">
                   <img
-                    src="https://artisansaloeuvre.com/wp-content/uploads/2022/01/mf-9004.jpg"
-                    alt="Artisan at work"
+                    src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=400&q=80"
+                    alt="Atelier craftsmanship"
                     className="w-full h-full object-cover"
                   />
                 </div>
-                <div className="rounded-2xl overflow-hidden aspect-square">
+                <div className="rounded-2xl overflow-hidden aspect-square bg-neutral-800">
                   <img
-                    src="https://artisansaloeuvre.com/wp-content/uploads/2022/01/mf-9004.jpg"
-                    alt="Product texture detail"
+                    src="https://images.unsplash.com/photo-1519710164239-da123dc03ef4?w=400&q=80"
+                    alt="Luxury detail"
                     className="w-full h-full object-cover"
                   />
                 </div>
               </div>
               <div className="space-y-4 pt-8">
-                <div className="rounded-2xl overflow-hidden aspect-square">
+                <div className="rounded-2xl overflow-hidden aspect-square bg-neutral-800">
                   <img
-                    src="https://www.westrock.com/-/media/images/blog/premium-spirits-box.jpg?h=800&iar=0&mh=800&mw=1200&w=1200&sc_lang=en&hash=7CBE39AFE4B54719CBE4E3A722F055F0"
-                    alt="Luxury packaging"
+                    src="https://images.unsplash.com/photo-1555529669-e69e7aa0ba9a?w=400&q=80"
+                    alt="Curated objects"
                     className="w-full h-full object-cover"
                   />
                 </div>
-                <div className="rounded-2xl overflow-hidden aspect-[3/4]">
+                <div className="rounded-2xl overflow-hidden aspect-[3/4] bg-neutral-800">
                   <img
-                    src="https://www.westrock.com/-/media/images/blog/premium-spirits-box.jpg?h=800&iar=0&mh=800&mw=1200&w=1200&sc_lang=en&hash=7CBE39AFE4B54719CBE4E3A722F055F0"
-                    alt="Curated product display"
+                    src="https://images.unsplash.com/photo-1615529182904-14819c35db37?w=400&q=80"
+                    alt="Elegant living"
                     className="w-full h-full object-cover"
                   />
                 </div>
               </div>
-              {/* Floating badge */}
-              <motion.div
-                animate={shouldReduce ? {} : { y: [0, -8, 0] }}
-                transition={{ repeat: Infinity, duration: 3, ease: "easeInOut" }}
-                className="absolute -bottom-4 -left-4 bg-white rounded-2xl shadow-2xl p-4 flex items-center gap-3"
-              >
-                <div className="w-10 h-10 rounded-xl bg-violet-600 flex items-center justify-center">
-                  <Sparkles className="w-5 h-5 text-white" />
-                </div>
-                <div>
-                  <p className="text-xs font-bold text-neutral-900">
-                    Est. 2019
-                  </p>
-                  <p className="text-xs text-neutral-500">Paris, France</p>
-                </div>
-              </motion.div>
             </motion.div>
           </div>
         </div>
       </section>
 
       {/* ── TESTIMONIALS ─────────────────────────────────────────────────── */}
-      <section className="bg-neutral-50 py-24">
+      <section className="bg-white py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial="hidden"
@@ -770,13 +754,13 @@ export default function HomePage() {
               variants={fadeInUp}
               className="text-xs font-semibold text-violet-600 uppercase tracking-widest mb-3"
             >
-              Social Proof
+              Voices of Lumière
             </motion.p>
             <motion.h2
               variants={fadeInUp}
               className="text-3xl sm:text-4xl font-bold text-neutral-900 font-playfair"
             >
-              Loved by discerning people
+              What Our Clients Say
             </motion.h2>
           </motion.div>
 
@@ -785,38 +769,31 @@ export default function HomePage() {
             whileInView="visible"
             viewport={{ once: true, margin: "-80px" }}
             variants={staggerContainer}
-            className="grid grid-cols-1 md:grid-cols-3 gap-7"
+            className="grid grid-cols-1 md:grid-cols-3 gap-8"
           >
             {testimonials.map((t) => (
               <motion.div
                 key={t.id}
                 variants={fadeInUp}
-                whileHover={shouldReduce ? {} : { y: -4 }}
-                transition={{ duration: 0.3 }}
-                className="bg-white rounded-2xl p-7 shadow-sm hover:shadow-lg transition-shadow duration-300 border border-neutral-100 flex flex-col gap-5"
+                className="bg-neutral-50 rounded-2xl p-8 flex flex-col gap-5 border border-neutral-100"
               >
-                <Quote className="w-8 h-8 text-violet-200" />
+                <Quote className="w-8 h-8 text-violet-300" />
                 <p className="text-neutral-700 leading-relaxed text-sm flex-1">
-                  "{t.text}"
+                  {t.text}
                 </p>
                 <div className="flex items-center gap-0.5 mb-1">
                   {Array.from({ length: t.rating }).map((_, i) => (
-                    <Star
-                      key={i}
-                      className="w-4 h-4 fill-amber-400 text-amber-400"
-                    />
+                    <Star key={i} className="w-4 h-4 fill-amber-400 text-amber-400" />
                   ))}
                 </div>
-                <div className="flex items-center gap-3 pt-3 border-t border-neutral-100">
+                <div className="flex items-center gap-3">
                   <img
                     src={t.avatar}
                     alt={t.name}
-                    className="w-10 h-10 rounded-full object-cover bg-neutral-100"
+                    className="w-11 h-11 rounded-full object-cover"
                   />
                   <div>
-                    <p className="text-sm font-semibold text-neutral-900">
-                      {t.name}
-                    </p>
+                    <p className="text-sm font-semibold text-neutral-900">{t.name}</p>
                     <p className="text-xs text-neutral-500">{t.role}</p>
                   </div>
                 </div>
@@ -826,60 +803,49 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── CONTACT / CTA ────────────────────────────────────────────────── */}
-      <section
-        id="contact"
-        className="bg-gradient-to-br from-violet-600 via-indigo-600 to-indigo-700 py-24 relative overflow-hidden"
-      >
-        {/* Background glow */}
-        <div className="absolute inset-0 opacity-20">
-          <div className="absolute top-0 left-1/4 w-96 h-96 bg-white rounded-full blur-[120px]" />
-          <div className="absolute bottom-0 right-1/4 w-80 h-80 bg-white rounded-full blur-[100px]" />
-        </div>
-
-        <div className="relative z-10 max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      {/* ── NEWSLETTER ───────────────────────────────────────────────────── */}
+      <section className="bg-gradient-to-br from-violet-950 via-indigo-950 to-neutral-950 py-24">
+        <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-80px" }}
             variants={staggerContainer}
           >
-            <motion.p
-              variants={fadeInUp}
-              className="text-white/70 text-xs uppercase tracking-widest font-semibold mb-4"
-            >
-              Join the Inner Circle
-            </motion.p>
+            <motion.div variants={fadeInUp} className="mb-4">
+              <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 border border-white/20 text-white/70 text-sm">
+                <Sparkles className="w-4 h-4 text-violet-400" />
+                Members get early access
+              </span>
+            </motion.div>
             <motion.h2
               variants={fadeInUp}
-              className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white font-playfair mb-5"
+              className="text-3xl sm:text-4xl font-bold text-white font-playfair mb-4"
             >
-              First to know. First to own.
+              Join the Inner Circle
             </motion.h2>
             <motion.p
               variants={fadeInUp}
-              className="text-white/70 text-base leading-relaxed mb-10"
+              className="text-white/60 mb-8 leading-relaxed"
             >
-              Subscribe for early access to new arrivals, exclusive member
-              pricing, and invitations to private preview events.
+              Be the first to discover new arrivals, exclusive offers, and
+              stories from our ateliers around the world.
             </motion.p>
 
             {subscribed ? (
               <motion.div
-                initial={{ opacity: 0, scale: 0.9 }}
+                initial={{ opacity: 0, scale: 0.95 }}
                 animate={{ opacity: 1, scale: 1 }}
-                className="inline-flex items-center gap-3 px-8 py-4 bg-white/20 backdrop-blur-sm rounded-2xl border border-white/30"
+                className="flex items-center justify-center gap-3 text-emerald-400 font-semibold"
               >
-                <Check className="w-5 h-5 text-white" />
-                <span className="text-white font-semibold">
-                  You're on the list — welcome to Lumière.
-                </span>
+                <Check className="w-5 h-5" />
+                You&apos;re on the list. Welcome to Lumière.
               </motion.div>
             ) : (
               <motion.form
                 variants={fadeInUp}
                 onSubmit={handleSubscribe}
-                className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto"
+                className="flex flex-col sm:flex-row gap-3"
               >
                 <input
                   type="email"
@@ -887,28 +853,80 @@ export default function HomePage() {
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="your@email.com"
                   required
-                  className="flex-1 px-5 py-4 rounded-2xl bg-white/15 backdrop-blur-sm border border-white/30 text-white placeholder-white/50 focus:outline-none focus:border-white/60 transition-colors duration-200 text-sm"
+                  className="flex-1 px-5 py-3.5 rounded-xl bg-white/10 border border-white/20 text-white placeholder-white/40 focus:outline-none focus:border-violet-400 transition-colors duration-200"
                 />
-                <motion.button
-                  whileHover={shouldReduce ? {} : { scale: 1.04 }}
-                  whileTap={shouldReduce ? {} : { scale: 0.97 }}
+                <button
                   type="submit"
-                  className="px-7 py-4 bg-white text-violet-700 font-semibold rounded-2xl hover:bg-neutral-100 transition-colors duration-200 text-sm shadow-lg"
+                  className="px-7 py-3.5 bg-gradient-to-r from-violet-600 to-indigo-600 text-white font-semibold rounded-xl hover:opacity-90 transition-opacity duration-200 whitespace-nowrap"
                 >
                   Subscribe
-                </motion.button>
+                </button>
               </motion.form>
             )}
-
-            <motion.p
-              variants={fadeInUp}
-              className="mt-5 text-white/40 text-xs"
-            >
-              No spam, ever. Unsubscribe at any time.
-            </motion.p>
           </motion.div>
         </div>
       </section>
+
+      {/* ── FOOTER ───────────────────────────────────────────────────────── */}
+      <footer className="bg-neutral-950 border-t border-neutral-800 py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
+            <div className="md:col-span-2">
+              <h3 className="text-2xl font-bold text-white font-playfair mb-3">
+                {APP_NAME}
+              </h3>
+              <p className="text-neutral-500 text-sm leading-relaxed max-w-sm">
+                Rare objects, considered beauty, and enduring craft — curated
+                for those who believe the everyday deserves to be extraordinary.
+              </p>
+            </div>
+            <div>
+              <h4 className="text-sm font-semibold text-white uppercase tracking-wider mb-4">
+                Shop
+              </h4>
+              <ul className="space-y-2.5">
+                {["New Arrivals", "Collections", "Featured", "Sale"].map((item) => (
+                  <li key={item}>
+                    <a href="#" className="text-sm text-neutral-500 hover:text-white transition-colors duration-200">
+                      {item}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div>
+              <h4 className="text-sm font-semibold text-white uppercase tracking-wider mb-4">
+                Company
+              </h4>
+              <ul className="space-y-2.5">
+                {["About", "Journal", "Careers", "Contact"].map((item) => (
+                  <li key={item}>
+                    <a href="#" className="text-sm text-neutral-500 hover:text-white transition-colors duration-200">
+                      {item}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+          <div className="border-t border-neutral-800 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <p className="text-neutral-600 text-xs">
+              &copy; {new Date().getFullYear()} {APP_NAME}. All rights reserved.
+            </p>
+            <div className="flex items-center gap-6">
+              {["Privacy", "Terms", "Cookies"].map((item) => (
+                <a
+                  key={item}
+                  href="#"
+                  className="text-xs text-neutral-600 hover:text-neutral-400 transition-colors duration-200"
+                >
+                  {item}
+                </a>
+              ))}
+            </div>
+          </div>
+        </div>
+      </footer>
     </main>
   );
 }

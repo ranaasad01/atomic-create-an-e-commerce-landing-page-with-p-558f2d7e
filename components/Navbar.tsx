@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
@@ -117,7 +117,7 @@ export default function Navbar() {
                 whileTap={{ scale: 0.97 }}
                 className="inline-flex items-center px-5 py-2.5 rounded-xl bg-gradient-to-r from-violet-600 to-indigo-600 text-white text-sm font-semibold shadow-md hover:shadow-violet-200 hover:shadow-lg transition-shadow duration-200 cursor-pointer"
               >
-                {APP_CTA_LABEL}
+                Shop
               </motion.span>
             </Link>
 
